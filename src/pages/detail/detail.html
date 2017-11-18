@@ -1,0 +1,137 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title  *ngIf="banner">{{banner.fname}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding *ngIf="banner">
+  <div style="position:relative;padding-top:26px;">
+    <img [src]="'assets/'+banner.lg" class="mydefault-bg">
+    <div class="over-layer"></div>
+    <ion-grid class="movie-box">
+      <ion-row>
+        <div class="film-name">{{banner.fname}}</div>
+      </ion-row>
+      <ion-row style="margin-top:4px;">
+          <p class="film-ename">{{banner.f_ename}}</p>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p style="margin-top:50px;">{{banner.type}}</p> 
+          <p>
+            <span *ngIf="banner.area">{{banner.area}}</span>
+            <span *ngIf="banner.duration">/{{banner.duration}}分钟</span>
+          </p> 
+          <p *ngIf="banner.release_time">{{banner.release_time}}大陆上映</p>
+          <p *ngIf="banner.soon==0 && banner.score" class="score">
+              观众评分：
+              <span style="color:#FFB007;font-size:20px">{{banner.score}}</span>
+          </p>
+          <p *ngIf="banner.soon>0 && banner.expected_num" class="score">
+              <span style="color:#FFB007;font-size:20px">{{banner.expected_num}}人想看</span>
+          </p>
+        </ion-col>   
+        <ion-col>
+          <img [src]="'assets/'+banner.lg" alt="">
+        </ion-col>
+      </ion-row> 
+    </ion-grid>
+  </div>
+  <ion-grid style="margin-top:10px;">
+    <ion-row>
+      <ion-col>
+          <button ion-button clear class="actbtn" block (click)=wannerView()> 
+            <div *ngIf="!isView">
+                <ion-icon name="heart"></ion-icon>
+                <span class="tips">想看</span>
+            </div>
+            <div *ngIf="isView">
+                <ion-icon name="heart" style="color:#ef4238;"></ion-icon>
+                <span class="tips">已想看</span>
+            </div>
+            </button>
+      </ion-col>
+      <ion-col>
+          <button ion-button clear  class="actbtn" block > 
+              <i class="iconfont icon-star"></i>
+              <span class="tips" style="padding-top:2px;">看过</span>
+            </button>
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <div style="padding:5px;" class="detail" id="detail">{{banner.details}}</div>
+      <button ion-button clear block style="height:9px;" (click)="handleMore()">
+        <ion-icon *ngIf="!isDown" name="arrow-down" style="color:#C4B1B1"></ion-icon>
+        <ion-icon *ngIf="isDown" name="arrow-up" style="color:#C4B1B1"></ion-icon>
+      </button>
+    </ion-row>
+  </ion-grid>
+
+  <div class="sep-line"></div>
+
+  <div class="title">演职人员</div>
+  <ion-scroll scrollX="true" style="white-space:nowrap;height:160px" class="actor">
+   <ion-card class="box" *ngFor="let item of actors">
+     <img [src]="'assets/img/actor/'+item.pic" *ngIf="item.pic">
+     <img src="assets/img/actor/default-img.png" *ngIf="!item.pic">
+     <ion-card-content style="padding:5px;overflow:hidden;text-align:center; text-overflow: ellipsis;">
+       <p style="color:#000;" class="ellipsis bold">{{item.star_name}}</p>
+       <p *ngIf="item.role" class="ellipsis"  style="font-size:1.2rem;">{{item.role}}</p>
+     </ion-card-content>
+   </ion-card>
+  </ion-scroll>
+
+  <div class="sep-line"></div>
+  <div class="title">短评</div>
+  <div *ngIf="comment">
+    <div *ngIf="comment.length==0" style="margin-top:4px; color:#FFB007">暂无评论</div>
+    <ion-list *ngIf="comment.length>0">
+        <ion-item  *ngFor="let item of comment" style="padding-left:0;" class="comment">
+          <ion-avatar item-start style="position:absolute;top:2px;;">
+            <img [src]="'assets/'+item.avatar" style="vertical-align:top;"/>
+          </ion-avatar>
+          <p>{{item.uname}}</p>
+          <p class="starscore">
+              
+              <i class="half-star left"  *ngIf="item.score<1"></i>
+              <i class="half-star left active" *ngIf="item.score>0"></i>
+              <i class="half-star right" *ngIf="item.score<2"></i>
+              <i class="half-star right active"  *ngIf="item.score>1"></i>
+              <i class="half-star left"  *ngIf="item.score<3"></i>
+              <i class="half-star left active" *ngIf="item.score>2"></i>
+              <i class="half-star right" *ngIf="item.score<4"></i>
+              <i class="half-star right active"  *ngIf="item.score>3"></i>
+              <i class="half-star left"  *ngIf="item.score<5"></i>
+              <i class="half-star left active" *ngIf="item.score>4"></i>
+              <i class="half-star right" *ngIf="item.score<6"></i>
+              <i class="half-star right active"  *ngIf="item.score>5"></i>
+              <i class="half-star left"  *ngIf="item.score<7"></i>
+              <i class="half-star left active" *ngIf="item.score>6"></i>
+              <i class="half-star right" *ngIf="item.score<8"></i>
+              <i class="half-star right active"  *ngIf="item.score>7"></i>
+              <i class="half-star left"  *ngIf="item.score<9"></i>
+              <i class="half-star left active" *ngIf="item.score>8"></i>
+              <i class="half-star right"  *ngIf="item.score<10"></i>
+              <i class="half-star right active" *ngIf="item.score>9"></i>
+              <span style="font-size:14px;color:#ffc600;margin-left:8px;">{{item.score}}分</span>
+          </p>
+          <p style="white-space:normal">{{item.content}}</p>
+          <p>
+            <ion-note>{{item.comment_time.slice(5,10)}}</ion-note>
+          </p>
+        </ion-item>
+      </ion-list>
+  </div>
+
+
+  
+</ion-content>

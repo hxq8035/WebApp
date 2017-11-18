@@ -1,0 +1,66 @@
+page-user-center {
+    .user ion-item{
+        background-color:#f10215!important; 
+        height:130px;
+    }
+    .item-ios ion-avatar img {
+        width: 60px;
+        height: 60px;
+    }
+    .item-md ion-avatar img {
+        width: 60px;
+        height: 60px;
+    }
+    .scroll-content{
+        padding:0!important;
+    }
+    .color-box p{
+        margin-top:6px;
+        margin-bottom: 0px;
+        font-size: 1.2rem;
+    }
+    .color-box ion-col{
+        border-right:1px solid #ccc;
+        text-align: center;
+        height:58px;
+    }
+    .color-box ion-col:last-child{
+        border-right:none;
+    }
+    .color-box ion-col i{
+        width: 28px;
+        height: 24px;
+        display: inline-block;
+    }
+    .more{
+        float:right;
+        color:#666;
+        margin-right:10px;
+    }
+    .order-title{
+        padding:6px 0 6px 16px;
+    }
+    .myOrder{
+        border-top:1px solid #dedede;;
+        border-bottom:1px solid #dedede;;
+    }
+    .myOrder p{
+        margin-top:4px;
+    }
+    .myOrder i{
+        font-size: 21px;
+    }
+    .myOrder ion-col{
+        border:none;
+    }
+    .mylist ion-item{
+        font-size:1.4rem
+    }
+    .mylist i{
+        vertical-align:middle;float:right;margin-right:-4px;
+        color:#666;
+    }
+    ion-list{
+        margin-bottom:0!important;
+    }
+}

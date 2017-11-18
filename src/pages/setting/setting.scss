@@ -1,0 +1,56 @@
+page-setting {
+    .scroll-content{
+        padding:0!important;
+        background-color:rgba(238, 235, 235, 0.6);
+    }
+    .mylist ion-item{
+        font-size:1.4rem
+    }
+    .mylist i{
+        vertical-align:middle;float:right;margin-right:-4px;
+        color:#666;
+    }
+    ion-list{
+        margin-bottom:0!important;
+    }
+    .toggle-ios.toggle-checked .toggle-icon,.toggle-md.toggle-checked .toggle-icon {
+    background-color: #f10215;
+    }
+   .toggle-ios,.toggle-md{
+       height: 24px;
+       width:46px;
+   }
+   .toggle-ios .toggle-inner,.toggle-md .toggle-inner{
+       height: 20px;
+       width: 22px;
+   }
+   .toggle-ios .toggle-inner{
+       left:4px;
+   }
+   .toggle-ios .toggle-icon::before{
+       background-color: #e6e6e6;
+   }
+   .toggle-md.toggle-checked .toggle-inner{
+        background-color: #fff;
+   }
+   .toggle-md .toggle-inner{
+       left:2px;
+       top:2px;
+   }
+   .toggle-md.toggle-checked .toggle-inner {
+    -webkit-transform: translate3d(18px, 0, 0);
+    transform: translate3d(18px, 0, 0);
+    }
+    .logout{
+        padding:16px 10px;
+    }
+    .logout button{
+        color:#fff;
+        background-color:#f10215;
+
+    }
+    .list-md > .item-block:last-child .item-inner,.list-ios > .item-block:last-child .item-inner{
+            border-bottom: 1px solid #dedede;
+    }
+
+}

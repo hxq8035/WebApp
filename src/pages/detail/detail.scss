@@ -1,0 +1,89 @@
+page-detail {
+    ion-content>.scroll-content{
+        margin-top: 56px;
+        padding-top:0!important;
+    }
+    .film-name{
+        height: 20px;
+        color:#fff;
+        font-weight:bold;
+        font-size: 1.8rem;
+    }
+    .film-ename{
+        margin: 0;
+        
+    }
+    .score{
+        position: absolute;
+        bottom:0;
+        color:#fff;
+    }
+    .movie-box{
+        z-index:20;
+        color:#ccc;
+    }
+    .over-layer{
+        position: absolute;
+        width: 120%;
+        margin-left: -40px;
+        height: 100%;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        background: rgba(10, 10, 10, 0.9);
+    }
+   
+    
+    .mydefault-bg{
+        width: 100%;
+        transform: scaleX(2);
+        height: 100%;
+        position: absolute;
+        z-index: -2;
+        left: 0;
+        top: 0;
+    }
+     .content-md .over-lay,.content-md .default-bg{
+        height: 265px;
+    }
+    .actbtn{
+        border: 1px solid #666;
+        box-shadow: 1px 1px rgba(87, 88, 83, 0.67);
+        color:#666;
+    }
+    .detail{
+        height:60px;
+        overflow: hidden;
+    }
+    .tips{
+        padding-left: 4px;
+    }
+    .starscore{
+        font-size: 0;
+    }
+    .half-star{
+        display: inline-block;
+        width: 8px;
+        height: 16px;    
+    }
+    .left{
+        padding-left:2px;
+        background: url("../assets/img/movie_detail/star-left-gray.png")  no-repeat;
+    }
+    .left.active{
+        background:url("../assets/img/movie_detail/star-left-yellow.png")  no-repeat;
+    }
+    .right{
+        padding-right:2px;
+        background: url("../assets/img/movie_detail/star-right-gray.png") no-repeat;
+    }
+    .right.active{
+        background:url("../assets/img/movie_detail/star-right-yellow.png")  no-repeat;
+    }
+    .item-inner{
+        margin-left: 52px;
+    }
+    .comment p{
+        margin-top: 6px;
+    }
+}
